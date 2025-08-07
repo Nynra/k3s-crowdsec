@@ -102,9 +102,9 @@ crowdsec:
       # Name of the secret to use
       name: "crowdsec-credentials"
       # The key in the secret that holds the csLapiSecret. Defaults to csLapiSecret
-      csLapiSecretKey: "csLapiSecret"
+      csLapiSecretKey: "csLapiSecretKey"
       # The key in the secret that holds the registrationToken. Defaults to registrationToken
-      registrationTokenKey: "registrationToken"
+      registrationTokenKey: "registrationTokenKey"
 
   lapi: 
     enabled: true 
