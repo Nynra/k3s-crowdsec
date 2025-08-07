@@ -126,8 +126,8 @@ crowdsec:
       - name: BOUNCER_KEY_traefik
         valueFrom:
           secretKeyRef:
-            name: crowdsec-bouncer-token
-            key: bouncerToken
+            name: crowdsec-credentials
+            key: bouncerTokenKey
       # If it's a test, we don't want to share signals with CrowdSec so disable the Online API.
       - name: DISABLE_ONLINE_API
         value: "true"
