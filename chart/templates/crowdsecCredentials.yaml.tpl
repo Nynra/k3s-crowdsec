@@ -34,4 +34,4 @@ spec:
       remoteRef:
         key: {{ .Values.externalSecret.secretName | quote }}
         property: {{ .Values.externalSecret.properties.bouncerToken | quote }}
-{{- end }}{{- end }}{{- end }}
+{{- end }}{{- end }}
