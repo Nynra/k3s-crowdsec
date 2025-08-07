@@ -13,6 +13,7 @@ externalSecret:
     csLapiSecret: "" 
     registrationToken: ""
     bouncerToken: ""
+    enrollKey: ""
 
 # Values for the CrowdSec chart
 crowdsec:
@@ -114,7 +115,10 @@ crowdsec:
       #- name: DISABLE_AGENT
       #  value: "true"
       - name: ENROLL_KEY
-        value: 40796d93c2958f9e58345514e67740e5
+        valueFrom: 
+          secretKeyRef:
+            name: crowdsec-credentials
+            key: enrollKey
       - name: ENROLL_INSTANCE_NAME
         value: k3s-cluster
       - name: ENROLL_TAGS
@@ -132,11 +136,14 @@ crowdsec:
       #   value: "crowdsecurity/whitelists"
 
     # Allows you to load environment variables from kubernetes secret or config map
-    envFrom: []
-      # - secretRef:
-      #     name: env-secret
-      # - configMapRef:
-      #     name: config-map
+    # Seems to be deprecated in favor of valueFrom in env
+    # envFrom:
+    #   # - secretRef:
+    #   #     name: env-secret
+    #   # - configMapRef:
+    #   #     name: config-map
+    #   - secretRef:
+    #       name: crowdsec-bouncer-token
 
     dashboard:
       # -- Enable Metabase Dashboard (by default disabled)

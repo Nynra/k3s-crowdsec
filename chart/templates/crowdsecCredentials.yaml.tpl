@@ -34,4 +34,8 @@ spec:
       remoteRef:
         key: {{ .Values.externalSecret.secretName | quote }}
         property: {{ .Values.externalSecret.properties.bouncerToken | quote }}
+    - secretKey: enrollKey
+      remoteRef:
+        key: {{ .Values.externalSecret.secretName | quote }}
+        property: {{ .Values.externalSecret.properties.enrollKey | quote }}
 {{- end }}{{- end }}
