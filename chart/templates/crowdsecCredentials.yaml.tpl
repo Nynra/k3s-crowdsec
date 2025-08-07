@@ -1,4 +1,4 @@
-{{- if .Values.enabled }}{{- if .Values.middlewares.crowdsecBouncer.enabled }}{{- if .Values.externalSecret.enabled }}
+{{- if .Values.enabled }}{{- if .Values.externalSecret.enabled }}
 apiVersion: external-secrets.io/v1
 kind: ExternalSecret
 metadata:
